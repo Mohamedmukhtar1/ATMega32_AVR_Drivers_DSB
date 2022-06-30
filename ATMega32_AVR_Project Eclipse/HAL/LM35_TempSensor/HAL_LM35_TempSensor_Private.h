@@ -1,0 +1,11 @@
+/*
+ * HAL_LM35_TempSensor_Private.h
+ *
+ *  Created on: Jun 23, 2022
+ *      Author: Eng- Mohamed Mokhtar
+ */
+
+#ifndef HAL_LM35_TEMPSENSOR_HAL_LM35_TEMPSENSOR_PRIVATE_H_
+#define HAL_LM35_TEMPSENSOR_HAL_LM35_TEMPSENSOR_PRIVATE_H_
+
+#endif /* HAL_LM35_TEMPSENSOR_HAL_LM35_TEMPSENSOR_PRIVATE_H_ */
