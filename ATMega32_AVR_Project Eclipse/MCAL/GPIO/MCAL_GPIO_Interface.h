@@ -14,21 +14,35 @@
 /***************_MCAL_INCLUDES_****************************/
 #include "MCAL_GPIO_Private.h"
 #include "MCAL_GPIO_Config.h"
-#include "MCAL_GPIO_Register.h"
+#include "../../MCAL/ATmeg32_Registers/MCAL_ATmega32_Register.h"
 
 /***************_Macros_Configuration_*********************/
+/****** GPIO_Port_____________________*********************/
+#define	GPIOA        0U
+#define	GPIOB        1U
+#define	GPIOC        2U
+#define	GPIOD        3U
+/****** GPIO_Pin______________________*********************/
+#define	GPIO_PIN_0	 0U
+#define	GPIO_PIN_1	 1U
+#define	GPIO_PIN_2	 2U
+#define	GPIO_PIN_3	 3U
+#define	GPIO_PIN_4	 4U
+#define	GPIO_PIN_5	 5U
+#define	GPIO_PIN_6	 6U
+#define	GPIO_PIN_7	 7U
 /****** Pins_States___________________*********************/
-#define	GPIO_INPUT		(u8)0	// For DDRx Register
-#define	GPIO_OUTPUT		(u8)1	// For DDRx Register
-#define	GPIO_LOW		(u8)0	// For PORTx Register
-#define	GPIO_HIGH		(u8)1   // For PORTx Register
-#define	INTERNAL_PULLUP_RESISTOR	(u8)0
-#define	EXTERNAL_PULLUP_RESISTOR	(u8)1	
+#define	GPIO_INPUT	 0U
+#define	GPIO_OUTPUT	 1U
+#define	GPIO_LOW	 0U
+#define	GPIO_HIGH	 1U
+/****** Input_Pins_Config_____________*********************/
+#define	INTERNAL_PULLUP_RESISTOR	0U
+#define	EXTERNAL_PULLUP_RESISTOR	1U
 
 /*===========================================================================
  ==================_APIs Supported by "MCAL_GPIO DRIVER"_====================
  ============================================================================*/
-
 void MGPIO_InitPinMode(u8 GPIOx, u8 GPIO_PIN_x, u8 Pin_Config_IO);
 void MGPIO_DeinitPort(u8 GPIOx);
 

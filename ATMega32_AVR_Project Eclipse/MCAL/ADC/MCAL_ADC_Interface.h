@@ -14,7 +14,7 @@
 /***************_MCAL_INCLUDES_****************************/
 #include "MCAL_ADC_Private.h"
 #include "MCAL_ADC_Config.h"
-#include "MCAL_ADC_Register.h"
+#include "../../MCAL/ATmeg32_Registers/MCAL_ATmega32_Register.h"
 
 /***************_Macros_Configuration_*********************/
 /****** Voltage Source___________________******************/
@@ -47,7 +47,6 @@
 /*============================================================================
   ==================_APIs Supported by "MCAL_ADC DRIVER"_=====================
   ============================================================================*/
-
 void MADC_vInitiate(u8 Volt_Referencex);
 void MADC_vDisable(void);
 void MADC_vSetAutoTrigeringMode(u8 Auto_Trigering_Conversion_Config);

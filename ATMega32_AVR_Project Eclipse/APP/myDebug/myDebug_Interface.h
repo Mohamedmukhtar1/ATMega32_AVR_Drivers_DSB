@@ -9,7 +9,7 @@
 #define APP_MYDEBUG_MYDEBUG_INTERFACE_H_
 
 /***************_APP_INCLUDES_*****************************/
-#include "../../APP\Utility\APP_Utility.h"
+#include "../../APP\Utility/APP_Utility.h"
 #include "../../APP/Utility/Math/Math_Interface.h"
 
 /***************_myDebug_INCLUDES_*************************/
@@ -39,6 +39,7 @@
 /*============================================================================
  ==================_APIs Supported by "myDebug DRIVER"_===================
  ============================================================================*/
+void DADC_ActiveAll_GPIO_Test(void);
 void DADC_Simple_ADC_Test(u8 ADC_CHANNEL_x);
 void DKeyPad_Simple_Kepad_Test(void);
 void DLM35_Simple_LM35_Test(u8 ADC_CHANNEL_x);

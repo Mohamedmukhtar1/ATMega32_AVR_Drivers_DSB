@@ -128,4 +128,5 @@
 			<resource resourceType="PROJECT" workspacePath="/ATMega32_AVR_Project"/>
 		</configuration>
 	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
 </cproject>

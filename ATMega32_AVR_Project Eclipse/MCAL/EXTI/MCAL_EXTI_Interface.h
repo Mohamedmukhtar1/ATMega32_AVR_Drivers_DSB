@@ -14,7 +14,7 @@
 /***************_MCAL_INCLUDES_****************************/
 #include "MCAL_EXTI_Private.h"
 #include "MCAL_EXTI_Config.h"
-#include "MCAL_EXTI_Register.h"
+#include "../../MCAL/ATmeg32_Registers/MCAL_ATmega32_Register.h"
 
 /***************_Macros_Configuration_*********************/
 
@@ -29,6 +29,10 @@ void MEXTI2_vInitiate (void);
 void MEXTI0_vDisable(void);
 void MEXTI1_vDisable(void);
 void MEXTI2_vDisable(void);
+
+u8 MEXTI0_u8GetInterruptFlag(void);
+u8 MEXTI1_u8GetInterruptFlag(void);
+u8 MEXTI2_u8GetInterruptFlag(void);
 
 void MEXTI0_vSetCallBack_Execution(void (*LPtr_toFUNCTION)(void));
 void MEXTI1_vSetCallBack_Execution(void (*LPtr_toFUNCTION)(void));

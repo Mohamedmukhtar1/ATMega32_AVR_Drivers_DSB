@@ -5,7 +5,22 @@
  *      Author: Eng- Mohamed Mokhtar
  */
 
-#include "../../APP/myDebug/myDebug_Interface.h"
+#include "myDebug_Interface.h"
+
+void DADC_ActiveAll_GPIO_Test(void)
+{
+	u8 i=0;
+	u8 j=0;
+	for(i=0; i<=3; i++)
+	{
+		for(j=0; j<=7; j++)
+		{
+			MGPIO_InitPinMode(i, j, GPIO_OUTPUT);
+			MGPIO_WritePin(i, j, GPIO_HIGH);
+		}
+	}
+
+}
 
 void DADC_Simple_ADC_Test(u8 ADC_CHANNEL_x)
 {

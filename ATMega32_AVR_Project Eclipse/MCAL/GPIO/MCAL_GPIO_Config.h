@@ -8,19 +8,6 @@
 #ifndef MCAL_GPIO_CFG_H_
 #define MCAL_GPIO_CFG_H_
 
-#define	GPIOA		(u8)1
-#define	GPIOB		(u8)2
-#define	GPIOC		(u8)3
-#define	GPIOD		(u8)4
-
-#define	GPIO_PIN_0			(u8)0
-#define	GPIO_PIN_1			(u8)1
-#define	GPIO_PIN_2			(u8)2
-#define	GPIO_PIN_3			(u8)3
-#define	GPIO_PIN_4			(u8)4
-#define	GPIO_PIN_5			(u8)5
-#define	GPIO_PIN_6			(u8)6
-#define	GPIO_PIN_7			(u8)7
 
 #endif /* MCAL_GPIO_CFG_H_ */
 

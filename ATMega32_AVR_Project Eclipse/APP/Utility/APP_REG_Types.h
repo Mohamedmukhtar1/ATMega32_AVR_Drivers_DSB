@@ -20,8 +20,8 @@ typedef union {
 		u8 BIT6 :1;
 		u8 BIT7 :1;
 	} BitAccess;
-	u8 RegisterAccess;
-} Reg_8Bit_Utag;
+	u8 RegAccess;
+} Reg_8Bit_ut;
 
 /* 16_bit Register Typedef **************************************************************/
 typedef union {
@@ -47,7 +47,7 @@ typedef union {
 		u16 BYTE0 :8;
 		u16 BYTE1 :8;
 	} ByteAccess;
-	u16 RegisterAccess;
-} Reg_16Bit_Utag;
+	u16 RegAccess;
+} Reg_16Bit_ut;
 
 #endif /* INC_APP_UTILITY_APP_REG_TYPES_H_ */

@@ -33,7 +33,6 @@ void HLCD_vWriteString(u8 *Lu8_PTR_String);
 void HLCD_vWriteOrignalNumber(f32 loc_F32_NUMBER);
 void HLCD_vWriteNumber(s32 loc_S32_NUMBER);
 /***********************************************************************/
-void HLCD_vWriteNumberFixedPosition(s32 loc_S32_NUMBER, u8 LinePostion,
-		u8 Postion, u8 Width);
+void HLCD_vWriteNumberFixedPosition(s32 loc_S32_NUMBER, u8 LinePostion,u8 Postion, u8 Width);
 
 #endif /* HAL_LCD_INTERFACE_H_ */
