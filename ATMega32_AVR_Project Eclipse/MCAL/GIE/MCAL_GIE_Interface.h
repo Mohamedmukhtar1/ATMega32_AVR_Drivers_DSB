@@ -14,7 +14,7 @@
 /***************_MCAL_INCLUDES_****************************/
 #include "MCAL_GIE_Private.h"
 #include "MCAL_GIE_Config.h"
-#include "MCAL_GIE_Register.h"
+#include "../../MCAL/ATmeg32_Registers/MCAL_ATmega32_Register.h"
 
 /*============================================================================
   ==================_APIs Supported by "MCAL_GIE DRIVER"_=====================

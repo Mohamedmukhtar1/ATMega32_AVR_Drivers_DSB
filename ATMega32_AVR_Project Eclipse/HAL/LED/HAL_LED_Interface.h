@@ -28,9 +28,9 @@
 /*============================================================================
  ==================_APIs Supported by "HAL_LED DRIVER"_======================
  ============================================================================*/
-void HLED_vInitiate(u8 Lu8_LED_x_);
-void HLED_vStateControl(u8 Lu8_LED_x_, u8 Lu8_LED_State);
-void HLED_vToggelLED(u8 Lu8_LED_x_);
-void HLED_vBlinkLED(u8 Lu8_LED_x_);
+void HLED_vInitiate(u8 Lu8_LED_x_PORT, u8 Lu8_LED_x_PIN);
+void HLED_vStateControl(u8 Lu8_LED_x_PORT, u8 Lu8_LED_x_PIN, u8 Lu8_LED_x_State);
+void HLED_vToggelLED(u8 Lu8_LED_x_PORT, u8 Lu8_LED_x_PIN);
+void HLED_vBlinkLED(u8 Lu8_LED_x_PORT, u8 Lu8_LED_x_PIN);
 
 #endif /* INC_HAL_LED_HAL_LED_INTERFACE_H_ */

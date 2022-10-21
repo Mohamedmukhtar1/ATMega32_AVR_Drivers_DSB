@@ -9,10 +9,10 @@
 
 /*GIE Enable Function*/
 void MGIE_vGlobalInterruptEnable(void) {
-	SET_BIT(REG_SREG, 7);
+	SET_BIT(REG_SREG, STATUS_BIT);
 }
 /*GIE Disable Function*/
 void MGIE_vGlobalInterruptDisable(void) {
-	CLR_BIT(REG_SREG, 7);
+	CLR_BIT(REG_SREG, STATUS_BIT);
 }
 

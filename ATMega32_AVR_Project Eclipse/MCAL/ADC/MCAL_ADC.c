@@ -91,8 +91,8 @@ void MADC_vSetAutoTrigeringMode(u8 Auto_Trigering_Conversion_Config)
 			//START Conversion with free running
 			SIGN_BIT(REG_ADCSRA.BitAccess.ADATE_Bit, LOW_BIT);
 			SIGN_BIT(REG_SFIOR.BitAccess.ADTS2_Bit , LOW_BIT);
-			SIGN_BIT(REG_SFIOR.BitAccess.ADTS1_Bit, LOW_BIT);
-			SIGN_BIT(REG_SFIOR.BitAccess.ADTS0_Bit, LOW_BIT);
+			SIGN_BIT(REG_SFIOR.BitAccess.ADTS1_Bit , LOW_BIT);
+			SIGN_BIT(REG_SFIOR.BitAccess.ADTS0_Bit , LOW_BIT);
 			SIGN_BIT(REG_ADCSRA.BitAccess.ADATE_Bit, HGH_BIT);
 			break;
 		case TRIGGERING_SOURCE_ANALOG_COMPARATOR:

@@ -7,9 +7,11 @@
 
 #include "MCAL_EXTI_Interface.h"
 
-void (*GPtr_EXTI0_CallBack_Fun)(void) = NULL;
-void (*GPtr_EXTI1_CallBack_Fun)(void) = NULL;
-void (*GPtr_EXTI2_CallBack_Fun)(void) = NULL;
+//void (*GPtr_EXTI0_CallBack_Fun)(void) = NULL;
+//void (*GPtr_EXTI1_CallBack_Fun)(void) = NULL;
+//void (*GPtr_EXTI2_CallBack_Fun)(void) = NULL;
+
+static void (*GPtr_EXTI_CallBack_Fun[3])(void) = {NULL,NULL,NULL};
 
 void MEXTI0_vInitiate (void)
 {
@@ -42,11 +44,17 @@ u8 MEXTI0_u8GetInterruptFlag(void)
 
 void MEXTI0_vSetCallBack_Execution(void (*LPtr_toFUNCTION)(void))
 {
-	GPtr_EXTI0_CallBack_Fun = LPtr_toFUNCTION;
+	//GPtr_EXTI0_CallBack_Fun = LPtr_toFUNCTION;
+	GPtr_EXTI_CallBack_Fun[0] = LPtr_toFUNCTION;
 }
 void ISR_EXTI_0_Vector(void)
 {
-	GPtr_EXTI0_CallBack_Fun();
+	//GPtr_EXTI0_CallBack_Fun();
+	if(NULL != GPtr_EXTI_CallBack_Fun[0])
+	{
+		GPtr_EXTI_CallBack_Fun[0]();
+	}
+	else{}
 }
 
 
@@ -81,12 +89,18 @@ u8 MEXTI1_u8GetInterruptFlag(void)
 
 void MEXTI1_vSetCallBack_Execution(void (*LPtr_toFUNCTION)(void))
 {
-	GPtr_EXTI1_CallBack_Fun = LPtr_toFUNCTION;
+	//GPtr_EXTI1_CallBack_Fun = LPtr_toFUNCTION;
+	GPtr_EXTI_CallBack_Fun[1] = LPtr_toFUNCTION;
 }
 
 void ISR_EXTI_1_Vector(void)
 {
-	GPtr_EXTI1_CallBack_Fun();
+	//GPtr_EXTI1_CallBack_Fun();
+	if(NULL != GPtr_EXTI_CallBack_Fun[1])
+	{
+		GPtr_EXTI_CallBack_Fun[1]();
+	}
+	else{}
 }
 
 
@@ -113,11 +127,17 @@ u8 MEXTI2_u8GetInterruptFlag(void)
 
 void MEXTI2_vSetCallBack_Execution(void (*LPtr_toFUNCTION)(void))
 {
-	GPtr_EXTI2_CallBack_Fun = LPtr_toFUNCTION;
+	//GPtr_EXTI2_CallBack_Fun = LPtr_toFUNCTION;
+	GPtr_EXTI_CallBack_Fun[2] = LPtr_toFUNCTION;
 }
 
 void ISR_EXTI_2_Vector(void)
 {
-	GPtr_EXTI2_CallBack_Fun();
+	//GPtr_EXTI2_CallBack_Fun();
+	if(NULL != GPtr_EXTI_CallBack_Fun[2])
+	{
+		GPtr_EXTI_CallBack_Fun[2]();
+	}
+	else{}
 }
 

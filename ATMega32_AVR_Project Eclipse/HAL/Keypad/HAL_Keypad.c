@@ -51,24 +51,28 @@ u8 HKEYPAD_u8Read(void) {
 	u8 Lu8_Row_Pin = KEYPAD_R0_PIN;
 	u8 Lu8_Col_Pin = KEYPAD_C0_PIN;
 	u8 Lu8_RC_DataReading = 0;
-	u8 Lu8_TempPad = PAD_RELEASE;
 
 	for (Lu8_Row_Pin = KEYPAD_R0_PIN ; Lu8_Row_Pin <= KEYPAD_R3_PIN ; Lu8_Row_Pin++)
 	{
 		MGPIO_WritePin(KEYPAD_ROW_PORT, Lu8_Row_Pin, GPIO_LOW);
 		for (Lu8_Col_Pin = KEYPAD_C0_PIN ; Lu8_Col_Pin <= KEYPAD_C3_PIN ; Lu8_Col_Pin++)
 		{
-			Lu8_TempPad = MGPIO_ReadPin(KEYPAD_COL_PORT, Lu8_Col_Pin);
-			if (PAD_PRESSE == Lu8_TempPad)
+			if (PAD_PRESSE == MGPIO_ReadPin(KEYPAD_COL_PORT, Lu8_Col_Pin))
 			{
 				Delay_vMilliSecond16MHzoscillator(25);
-				Lu8_TempPad = MGPIO_ReadPin(KEYPAD_COL_PORT, Lu8_Col_Pin);
-				if (PAD_PRESSE == Lu8_TempPad)
+				if (PAD_PRESSE == MGPIO_ReadPin(KEYPAD_COL_PORT, Lu8_Col_Pin))
 				{
 					while (PAD_PRESSE == MGPIO_ReadPin(KEYPAD_COL_PORT, Lu8_Col_Pin));
 					Lu8_RC_DataReading = Gu8_KeyPadARRAY[Lu8_Row_Pin-KEYPAD_R0_PIN][Lu8_Col_Pin-KEYPAD_C0_PIN];
-				} else {/*NOTHING only done Scanning*/}
-			} else {/*NOTHING only continue Scan*/}
+					return Lu8_RC_DataReading;	 /*NEW Modification okokok*/
+				}
+				else {/*<Failed Scan after 25 mS>*/
+					Lu8_RC_DataReading = PAD_THRESHOLD;
+				}
+			}
+			else {/*<Nothing only continue Scan>*/
+				Lu8_RC_DataReading = PAD_THRESHOLD;	/*NEW Modification*/
+			}
 		}
 		MGPIO_WritePin(KEYPAD_ROW_PORT, Lu8_Row_Pin, GPIO_HIGH);
 	}

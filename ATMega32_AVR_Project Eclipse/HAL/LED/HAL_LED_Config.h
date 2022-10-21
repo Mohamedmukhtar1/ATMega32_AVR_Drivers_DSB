@@ -9,12 +9,12 @@
 #define INC_HAL_LED_HAL_LED_CONFIG_H_
 
 #define LED_0_PORT               GPIOC
-#define LED_0_PIN                GPIO_PIN_1
+#define LED_0_PIN                GPIO_PIN_0
 
 #define LED_1_PORT               GPIOC
-#define LED_1_PIN                GPIO_PIN_2
+#define LED_1_PIN                GPIO_PIN_1
 
 #define LED_2_PORT               GPIOC
-#define LED_2_PIN                GPIO_PIN_3
+#define LED_2_PIN                GPIO_PIN_2
 
 #endif /* INC_HAL_LED_HAL_LED_CONFIG_H_ */
